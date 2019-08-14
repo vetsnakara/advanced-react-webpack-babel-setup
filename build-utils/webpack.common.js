@@ -13,7 +13,7 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -26,7 +26,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
@@ -34,6 +34,6 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['*', '.js'],
+    extensions: ['*', '.js', '.jsx'],
   },
 };

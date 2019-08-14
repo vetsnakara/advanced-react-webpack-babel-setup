@@ -2,8 +2,10 @@ const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 
 const getAddons = (addonsArgs = []) => {
-  const addons = Array.isArray(addonsArgs) ? addonsArgs : [addonsArgs];
-  return addons.map((name) => require(`./addons/webpack.${name}.js`));
+  const addons = Array.isArray(addonsArgs)
+    ? addonsArgs
+    : [addonsArgs];
+  return addons.map(name => require(`./addons/webpack.${name}.js`));
 };
 
 module.exports = ({ env, addon }) => {
